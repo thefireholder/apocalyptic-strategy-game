@@ -45,9 +45,21 @@ public class GameManager : MonoBehaviour
     }
 
     
-    public void moveCharacterOnBoard(GameObject character, int x, int y)
+    public void moveCharacterOnBoard(Character character, int x, int y)
     {
+        //delete reference from original tile first
         Debug.Log("Moving character on Board");
+    }
+    public void deleteCharacterFromBoard(Character character)
+    {
+        Debug.Log("Deleting character on Board");
+        Destroy(character.gameObject);
+    }
+
+    public void damageCharacterOnBoard(bool enemy, int dmg, int x, int y)
+    {
+        Debug.Log("Damaging character on Board");
+        
     }
 
 }
