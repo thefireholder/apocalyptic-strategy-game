@@ -21,7 +21,7 @@ public class Board : MonoBehaviour
         Wipe();
         CreateTiles();
         SpawnPlayer(Vector2.zero);
-        SpawnEnemy(new Vector2(50,51));
+        SpawnEnemy(new Vector2(51,51));
 
     }
 

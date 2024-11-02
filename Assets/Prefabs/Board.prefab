@@ -49,3 +49,5 @@ MonoBehaviour:
   width: 100
   lengthBin: 100
   widthBin: 100
+  enemyPrefab: {fileID: 8750313075715973668, guid: 1816e8246a6e549b684db370266c4404, type: 3}
+  playerPrefab: {fileID: 934078664377393073, guid: 482bb51725ec949119c05e38fb98bd27, type: 3}
