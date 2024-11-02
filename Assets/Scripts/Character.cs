@@ -50,9 +50,10 @@ public abstract class Character : MonoBehaviour
         GameManager.Instance.deleteCharacterFromBoard(this);
     }
 
-    public void Initialize(Vector2 coord, int hp = -1)
+    public virtual void Initialize(Vector2 coords, int hp = -1)
     {
-
+        this.coords = coords;
+        this.hp = hp;
     }
 
     public void spawn(Vector2 worldPos) {

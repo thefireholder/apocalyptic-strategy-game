@@ -13,7 +13,7 @@ public class Board : MonoBehaviour
     public GameObject playerPrefab;
 
     Vector2[,] tilePos; // position refers to float coordinate x,y
-    Character[,] characterCoord; // location refer to integer location i,j
+    Character[,] characterCoords; // location refer to integer location i,j
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class Board : MonoBehaviour
         Wipe();
         CreateTiles();
         SpawnPlayer(Vector2.zero);
-        SpawnEnemy(Vector2.left);
+        SpawnEnemy(new Vector2(6,5));
 
     }
 
@@ -52,7 +52,7 @@ public class Board : MonoBehaviour
 
     public void Wipe()
     {
-        characterCoord = new Character[lengthBin, widthBin];
+        characterCoords = new Character[lengthBin, widthBin];
     }
 
     public void SpawnPlayer(Vector2 coord)
@@ -60,10 +60,16 @@ public class Board : MonoBehaviour
 
     }
 
-    public void SpawnEnemy(Vector2 coord, string enemyType = "", int level = 1, int hp = -1)
+    public void SpawnEnemy(Vector2 coords, string enemyType = "", int level = 1, int hp = -1)
     {
         Enemy enemy = Instantiate(enemyPrefab).GetComponent<Enemy>();
-        //enemy.Instantiate();
+        enemy.Initialize(coords, enemyType, level, hp);
+
+        // spawn it
+        int i = (int) coords.x;
+        int j = (int) coords.y;
+        characterCoords[i, j] = enemy;
+        enemy.spawn(tilePos[i,j]);
     }
 
 }

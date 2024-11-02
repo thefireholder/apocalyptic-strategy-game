@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : Character
 {
+    public int level;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +18,8 @@ public class Enemy : Character
         
     }
 
-    public void Initialize(Vector2 coord, string enemyType = "", int level = 1, int hp = -1)
+    public void Initialize(Vector2 coords, string enemyType = "", int level = 1, int hp = -1)
     {
-
+        base.Initialize(coords, hp);
     }
 }
