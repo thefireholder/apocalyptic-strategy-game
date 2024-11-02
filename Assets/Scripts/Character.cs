@@ -24,7 +24,7 @@ public abstract class Character : MonoBehaviour
         coords.y = coords.y + yOffset;
         //add reference to new tile
         GameManager.Instance.moveCharacterOnBoard(this, (int) coords.x, (int) coords.y);
-
+        StartCoroutine(moveCor(xOffset, yOffset));
     }
     protected IEnumerator moveCor(int xOffset, int yOffset) {
         Vector3 pos = transform.position;
