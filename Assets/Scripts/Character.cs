@@ -11,7 +11,12 @@ public abstract class Character : MonoBehaviour
     public void useAttack(Attack a) {
         //go through list of attack offsets and damage the enemy on that tile if it exists.
         foreach ((Vector2 coord, int dmg) att in a.attackOffsets) {
-            GameManager.Instance.damageCharacterOnBoard(a.enemy, att.dmg, (int) att.coord.x, (int) att.coord.y);
+            int x = (int) coords.x + (int) att.coord.x;
+            int y = (int) coords.y + (int) att.coord.y;
+            if (x < 0 || y < 0 || y > 99 || x > 99) {
+                continue;
+            }
+            GameManager.Instance.damageCharacterOnBoard(a.enemy, att.dmg, x, y);
         }
     }
     public void move(int xOffset, int yOffset) {
@@ -48,6 +53,11 @@ public abstract class Character : MonoBehaviour
     public void Initialize(Vector2 coord, int hp = -1)
     {
 
+    }
+
+    public void spawn(Vector2 worldPos) {
+        //spawn sparks
+        transform.position = new Vector3(worldPos.x, 0, worldPos.y);
     }
 }
 
