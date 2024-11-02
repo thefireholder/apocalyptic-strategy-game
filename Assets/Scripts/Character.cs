@@ -19,6 +19,17 @@ public abstract class Character : MonoBehaviour
         coords.y = coords.y + yOffset;
         //add reference to new tile
         GameManager.Instance.moveCharacterOnBoard(this, (int) coords.x, (int) coords.y);
+
+    }
+    protected IEnumerator moveCor(int xOffset, int yOffset) {
+        Vector3 pos = transform.position;
+        Vector3 newPos = pos + new Vector3(xOffset * GameManager.Instance.tileLength, 0, yOffset * GameManager.Instance.tileLength);
+        float timer = 0;
+        while (timer < 0.5f) {
+            yield return null;
+            timer += Time.deltaTime;
+            transform.position = Vector3.Lerp(pos, newPos, timer / 0.5f);
+        }
     }
     public Vector2 getPos() {
         return coords;
