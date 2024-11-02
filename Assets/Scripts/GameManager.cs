@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     }
 
     
-    public void moveCharacter(GameObject character, int x, int y)
+    public void moveCharacterOnBoard(GameObject character, int x, int y)
     {
         Debug.Log("Moving character on Board");
     }
