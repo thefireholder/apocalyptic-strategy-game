@@ -22,4 +22,5 @@ public class Enemy : Character
     {
         base.Initialize(coords, hp);
     }
+
 }

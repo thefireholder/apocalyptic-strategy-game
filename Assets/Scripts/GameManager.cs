@@ -14,14 +14,14 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            return new Vector2(100,100);
+            return new Vector2(board.lengthBin, board.widthBin);
         }
     }
     public float tileLength
     {
         get
         {
-            return 1f;
+            return board.length / board.lengthBin;
         }
     }
 
