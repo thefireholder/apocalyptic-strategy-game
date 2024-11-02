@@ -17,6 +17,13 @@ public class GameManager : MonoBehaviour
             return new Vector2(100,100);
         }
     }
+    public float tileLength
+    {
+        get
+        {
+            return 1f;
+        }
+    }
 
     private void Awake()
     {
