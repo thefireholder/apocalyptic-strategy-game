@@ -11,6 +11,7 @@ public class Floor : MonoBehaviour
     public int widthBin = 100;
 
     Vector2[,] tileLoc;
+    GameObject[,] characters;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,6 @@ public class Floor : MonoBehaviour
                 //
             }
         }
-        
     }
 
     // Update is called once per frame
