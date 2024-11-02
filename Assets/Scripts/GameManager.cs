@@ -7,7 +7,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // making it singleton
-
+    public Board board;
     public static GameManager Instance { get; private set; }
 
     public Vector2 boardDim
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(boardDim);
+        initiate();
     }
 
     // Update is called once per frame
@@ -45,9 +45,22 @@ public class GameManager : MonoBehaviour
     }
 
     
-    public void moveCharacterOnBoard(GameObject character, int x, int y)
+    public void MoveCharacterOnBoard(GameObject character, int x, int y)
     {
         Debug.Log("Moving character on Board");
+    }
+
+    public void initiate()
+    {
+        //// wipe board
+        //board.Wipe();
+
+        //// create tiles
+        //board.CreateTiles();
+
+        //// spawn player
+
+        //// spawn enemy
     }
 
 }
