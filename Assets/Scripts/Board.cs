@@ -9,6 +9,8 @@ public class Board : MonoBehaviour
     public float width = 100;
     public int lengthBin = 100;
     public int widthBin = 100;
+    public GameObject enemyPrefab;
+    public GameObject playerPrefab;
 
     Vector2[,] tilePos; // position refers to float coordinate x,y
     Character[,] characterCoord; // location refer to integer location i,j
@@ -18,6 +20,9 @@ public class Board : MonoBehaviour
     {
         Wipe();
         CreateTiles();
+        SpawnPlayer(Vector2.zero);
+        SpawnEnemy(Vector2.left);
+
     }
 
     // Update is called once per frame
@@ -57,7 +62,8 @@ public class Board : MonoBehaviour
 
     public void SpawnEnemy(Vector2 coord, string enemyType = "", int level = 1, int hp = -1)
     {
-
+        Enemy enemy = Instantiate(enemyPrefab).GetComponent<Enemy>();
+        //enemy.Instantiate();
     }
 
 }

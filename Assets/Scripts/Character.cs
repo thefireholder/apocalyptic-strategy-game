@@ -33,6 +33,11 @@ public abstract class Character : MonoBehaviour
         //delete reference from tile
         GameManager.Instance.deleteCharacterFromBoard(this);
     }
+
+    public void Initialize(Vector2 coord, int hp = -1)
+    {
+
+    }
 }
 
 
