@@ -27,7 +27,7 @@ public class Floor : MonoBehaviour
 
                 GameObject quadInstance = Instantiate(tileA, transform);
                 quadInstance.transform.localPosition = new Vector3(x, 0, y);
-                quadInstance.transform.localRotation = Quaternion.Euler(90, 0, 0);
+                quadInstance.transform.localRotation = Quaternion.identity;
                 //
             }
         }
